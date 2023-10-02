@@ -6,7 +6,7 @@ app = Flask(__name__, static_folder='static', static_url_path='')
 
 @app.route('/')
 def hello():
-    return app.send_static_file('GTA_SA.zip')
+    return send_from_directory(app.static_folder, "GTA_SA.zip")
 
 if __name__ == '__main__':
     app.run(threaded=True, port=8080)
